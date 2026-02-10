@@ -4,7 +4,6 @@ from termcolor import colored
 p = Figlet(font='slant')
 
 print('''
-      dupa
     - Action!:  Input one name of the classes you want to attack: "Warrior" or "Wizard" or "Fairy" or "Witch Hunter"
                 or "Ogre" or "Troll" or "Paladin" or "Ent" or "Archer" or "Rogue" or "Bard" or "Ghost Knight"
     - attack:   Input: "s" or "strength" to attack your hero strength.
