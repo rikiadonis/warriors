@@ -4,16 +4,25 @@ from termcolor import colored
 p = Figlet(font='slant')
 
 print('''
-    - Action!:  Input one name of the classes you want to attack: "Warrior" or "Wizard" or "Fairy" or "Witch Hunter"
-                or "Ogre" or "Troll" or "Paladin" or "Ent" or "Archer" or "Rogue" or "Bard" or "Ghost Knight"
-    - attack:   Input: "s" or "strength" to attack your hero strength.
+    - Player1 and Player2 choose a hero from the list 
+    
+    - "Action!": Input one name of the classes you want to attack from your oponnet`s hero list:
+    
+    - "attack":  Input: "s" or "strength" to attack your hero strength.
                         The square on which the attacked hero stands must be adjacent to our hero's square.
-                Input: 'c' or 'craft' to attack your hero magic powers.
-                The square on which the attacked hero stands does not have to be adjacent to our hero's square.
-    - Do you want use a bow?    Input: "y" or "yes" if you want to shoot an arrow.
+                 Input: "c" or "craft" to attack your hero magic powers.
+                 The square on which the attacked hero stands does not have to be adjacent to our hero's square.
+    
+    - "Do you want use a bow?"  Input: "y" or "yes" if you want to shoot an arrow.
                                 Input: "n" or "no" if you don`t want to shoot ana arrow.
-    - Do you want use a strength?   Input: "y" or "yes" if you want use the archer`s strength.
+    
+    - "Do you want use a strength?"   Input: "y" or "yes" if you want use the archer`s strength.
                                     Input: "n" or "no" if you don`t want use the archer`s strength
+    
+    - if you attack with a sorceress. You can choose "freeze" or "thunder" instead "strength" or "craft". Thunder take 4 points of mana.
+      
+    - "You have to discard 1 skill point form" Input: "s" or "strength", "c" or "craft", "d" or "defend". You can`t discard skill if you
+      have one point of the skill.
       ''')
 
 class Warrior():
@@ -2328,7 +2337,7 @@ def get_you_cant_do_it(warrior, pleya1):
     else:
         print(f'{colored(warrior, 'cyan')}\nStrength: {warrior.strength*'🔴'}  Defence: {warrior.defend*'🛡️ '}  Craft: {warrior.craft*'🔵' if warrior.craft > 0 else None}  Stamina: {warrior.vim*'🟪'}  Mana: {warrior.mana*'🧊'}')
     while True:
-        discard = input(f'You heve to discard 1 skill point form {warrior.strength*'🔴'} {warrior.defend*'🛡️ '} {warrior.craft*'🔵'} : ').lower().strip()
+        discard = input(f'You have to discard 1 skill point form {warrior.strength*'🔴'} {warrior.defend*'🛡️ '} {warrior.craft*'🔵'} : ').lower().strip()
         if discard == 'strength' and warrior.strength <= 1 or discard == 's' and warrior.strength <= 1:
             print("You can't do it. You must have at least 1 skill strength's point")
         elif discard == 'craft' and warrior.craft <= 0 or discard == 'c' and warrior.craft <= 0:
